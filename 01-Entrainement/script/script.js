@@ -32,7 +32,7 @@ console.log("Attention aux erreurs de synthaxes");
 console.log(document);
 document.write("<h1 class='title__h1'>JAVASCRIPT</h1>");
 
-// document représente le DOM (document objet model), qui est un programme interne à notre navigateur qui fait en sorte que chaque élément (balises, attribut, évènememts etc...) soit récupérable, manipulable et exploitable par le langae JAVASCRIPT.
+// document représente le DOM (document objet model), qui est un programme interne à notre navigateur qui fait en sorte que chaque élément (balises, attribut, évènememts etc...) soit récupérable, manipulable et exploitable par le langage JAVASCRIPT.
 
 //  write est une fonction prédéfini permettant d'écrire dans le DOM.
 // nous l'utilisons uniquement pour ce fichier !! Ce n'est pas une bonne pratique pour la suite !!

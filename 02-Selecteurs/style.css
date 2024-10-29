@@ -1,0 +1,40 @@
+@import url(../01-Entrainement/css/reset.css);
+
+html,
+body {
+  font-size: 16px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+  min-height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.title__h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+}
+
+.block__section {
+  background-color: lightblue;
+  border-radius: 1rem;
+  width: 500px;
+}
+
+.block {
+  transition: all 1s;
+  cursor: pointer;
+}
+
+.rotation {
+  transform: rotate(5deg);
+  box-shadow: -5px 4px 9px -1px #000000;
+}

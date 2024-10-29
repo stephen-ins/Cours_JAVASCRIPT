@@ -721,3 +721,99 @@ recettes.forEach((tab) => {
 domCreateElement("hr");
 domCreateElement("br");
 domCreateElement("hr");
+
+domCreateElement("h2", "class", "title__h2", "Les OBJETS");
+
+domCreateElement("br");
+domCreateElement("br");
+
+let monObjet = {};
+monObjet.prenom = "Stephen"; // Création d'une propriété prénom
+console.log(monObjet);
+
+domCreateElement("p", "class", "paragraph", monObjet.prenom);
+
+let sangoku = {
+  nom: "San",
+  prenom: "Goku",
+  age: 35,
+};
+
+console.log(sangoku);
+let msg =
+  "Je m'appel " +
+  sangoku.nom +
+  sangoku.prenom +
+  " et j'ai " +
+  sangoku.age +
+  " ans.";
+domCreateElement("p", "class", "paragraph", msg);
+
+let voiture = {
+  marque: "BMW",
+  modele: "Série 3",
+  annee: 2020,
+  couleur: "noir",
+  changerCouleur: function (nouvelleCouleur) {
+    // voiture.couleur = rouge
+    return (this.couleur = nouvelleCouleur); // le mot clé 'this' veut dire lui même (donc l'objet dans lequel on se trouve 'voiture') voiture.couleur
+  },
+  optionDeSerie: [
+    "clim",
+    "autoradio",
+    "siege chauffant",
+    "park-assist",
+    "cuir",
+  ],
+  toitOuvrant: true,
+  motorisation: {
+    energie: "diesel",
+    puissance: "110 cv",
+  },
+
+  infos: function () {
+    // Avec les fonctions fléchées, this représente la fenêtre du navigateur et nom l'objet voiture
+    let marque = this.marque,
+      modele = this.modele,
+      couleur = this.couleur,
+      annee = this.annee,
+      optionDeSerie = this.optionDeSerie.join("/"); // join() permet de rassembler les éléments avec un séparateur
+
+    let msg =
+      marque +
+      " - " +
+      modele +
+      " - " +
+      couleur +
+      " - " +
+      annee +
+      " - " +
+      optionDeSerie;
+    domCreateElement("p", "class", "paragraph", msg);
+  },
+};
+
+domCreateElement("br");
+
+console.log(voiture);
+domCreateElement("p", "class", "paragraph", voiture.marque); // affiche BMW
+domCreateElement("p", "class", "paragraph", voiture.couleur); // affiche noir
+voiture.changerCouleur("rouge");
+domCreateElement("p", "class", "paragraph", voiture.couleur); // affiche rouge
+
+domCreateElement("br");
+
+voiture.infos();
+
+domCreateElement("p", "class", "paragraph", voiture.motorisation.energie);
+// affiche diesel
+
+domCreateElement("br");
+
+voiture.optionDeSerie.forEach((el) => {
+  domCreateElement("p", "class", "paragraph", el);
+});
+
+domCreateElement("br");
+domCreateElement("hr");
+domCreateElement("br");

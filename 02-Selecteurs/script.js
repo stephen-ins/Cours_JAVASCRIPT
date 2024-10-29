@@ -53,7 +53,57 @@ for (let z = 0; z < elemsDiv.length; z++) {
   elemsDiv[z].addEventListener("click", function () {
     // alert("test");
     // this représente l'objet lui-même elemsDiv[z]
+    //  classList est un objet contenant les classes CSS de l'élément HTML
+    // toggle() est une fonction permettant d'affecter la classe si l'élément HTML ne l'a pas, et de la supprimer si l'élément HTML la possède
+    // il existe aussi add() / remove()
     console.log(this.classList);
     this.classList.toggle("rotation");
   });
 }
+
+/* 
+        SELECTION PAR LE NOM DE LA BALISE
+*/
+
+let elemsP = document.getElementsByTagName("p");
+console.log("elemsP:" + elemsP); // [object HTMLCollection]
+console.log(elemsP);
+
+console.log(Array.from(elemsP));
+// La boucle forEach fonctionne uniquement avec les tableaux Array et non avec les objets
+// Array.from(elemsP) --> permet de convertir l'objet HTMLCollection en tableau Array
+// La boucle forEach permet de passer en revu tout éléments HTML <p>
+// item est une variable de réception, qui réceptionne un élément <p> par tour de boucle
+// onclick est l'évènement 'click' ajouté à chaque élément <p>
+Array.from(elemsP).forEach((item) => {
+  //   console.log(item);
+  item.onclick = function () {
+    // this représente l'objet lui-même <p>
+    this.classList.toggle("scale");
+  };
+});
+
+/* 
+        SELECTION AVEC querySelector() et querySelectorAll()
+*/
+
+// querySelector() nous renvoie le premier élément correspondant au selecteur mis dans les parenthères
+let premierElementP = document.querySelector("p");
+console.log(premierElementP);
+
+// querySelectorAll() nous renvoie tous les éléments correspondant au selecteur mis dans les parenthères
+let lesDivEtlesP = document.querySelectorAll("div, p, #section");
+console.log(lesDivEtlesP);
+
+// Exo : Au click sur l'élément div class 'message', récupérer son contenu et l'envoyer directement dans la div class 'result'
+
+let tag = document.querySelector(".message");
+console.log(tag);
+
+result = document.querySelector("#result");
+console.log(result);
+
+tag.addEventListener("click", function () {
+  //   alert("kjkdjflkdjfd");
+  (result.innerText = "message"), "color: #256965, background: #159006";
+});

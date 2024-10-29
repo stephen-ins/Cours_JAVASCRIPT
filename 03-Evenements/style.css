@@ -1,0 +1,41 @@
+@import url(../01-Entrainement/css/reset.css);
+
+html,
+body {
+  font-size: 16px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.block {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  margin: 50px;
+  transition: all 0.5s;
+}
+
+.background__lightblue {
+  background-color: lightblue;
+  width: 50vh;
+}
+
+.background__lightcoral {
+  background-color: lightcoral;
+  width: 25vh;
+}
+
+.background__orange {
+  background-color: lightsalmon;
+  height: 50vh;
+}
+.background__purple {
+  background-color: purple;
+  height: 25vh;
+}

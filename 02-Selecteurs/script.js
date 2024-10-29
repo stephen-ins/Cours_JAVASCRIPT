@@ -97,13 +97,15 @@ console.log(lesDivEtlesP);
 
 // Exo : Au click sur l'élément div class 'message', récupérer son contenu et l'envoyer directement dans la div class 'result'
 
-let tag = document.querySelector(".message");
+const tag = document.querySelector(".message");
 console.log(tag);
 
-result = document.querySelector("#result");
+const result = document.querySelector("#result");
 console.log(result);
 
-tag.addEventListener("click", function () {
-  //   alert("kjkdjflkdjfd");
-  (result.innerText = "message"), "color: #256965, background: #159006";
-});
+tag.onclick = function () {
+  //   alert("test");
+  console.log(this.innerText);
+  //   on affecte le contenu de texte de la div class CSS message à la div id CSS result
+  result.innerText = this.innerText;
+};

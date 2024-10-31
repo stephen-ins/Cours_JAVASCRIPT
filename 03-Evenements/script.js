@@ -394,16 +394,23 @@ form.addEventListener("submit", function (event) {
   const displayErrorPrenom = document.querySelector(".error__prenom");
   const inputNom = document.querySelector("#nom");
   const displayErrorNom = document.querySelector(".error__nom");
-
-  // console.log(inputPrenom.value);
-
+  const displayOkForm = document.querySelector(".message__validation");
+  // console.log(displayOkForm);
   // Exo : si le champs n'est pas vide, retirer le message d'erreur et la bordure
+  let count = 0;
 
+  /* 
+  Exo :
+  1. Faites en sorte de retirer la bordure et le message d'erreur si l'internaute a correctement rempli le formulaire
+  2. Faites le même pour le champs nom
+  3. Faites en sorte d'afficher un message de validation si l'utilisateur a correctement rempli le formulaire
+*/
   if (inputPrenom.value == 0) {
     let errorPrenom =
       '<span class="text__error">Saisi ton prenom bordel !!!</span>';
     displayErrorPrenom.innerHTML = errorPrenom;
     inputPrenom.classList.add("border");
+    count++;
   } else {
     inputPrenom.classList.remove("border");
     displayErrorPrenom.innerHTML = "";
@@ -413,8 +420,63 @@ form.addEventListener("submit", function (event) {
     let errorNom = '<span class="text__error">Saisi ton nom bordel !!!</span>';
     displayErrorNom.innerHTML = errorNom;
     inputNom.classList.add("border");
+    count++;
   } else {
     inputNom.classList.remove("border");
     displayErrorNom.innerHTML = "";
   }
+
+  // console.log(count);
+
+  if (count == 0) {
+    let okForm =
+      '<span class="message__validation">Vous avez correctement saisi le formulaire</span>';
+    displayOkForm.innerHTML = okForm;
+  } else {
+    displayOkForm.innerHTML = "";
+  }
 });
+
+// Exercice la calculatrice Js
+
+function calculate(event) {
+  event.preventDefault(); // Empêche la soumission du formulaire
+
+  const number1 = parseFloat(document.getElementById("number1").value);
+  const number2 = parseFloat(document.getElementById("number2").value);
+  const operation = document.getElementById("calcul__select").value;
+  const resultDisplay = document.getElementById("result");
+  const informationFail = document.getElementById("information__fail");
+
+  let resultat;
+
+  if (isNaN(number1) || isNaN(number2)) {
+    informationFail.textContent = "Veuillez entrer des nombres valides.";
+    return;
+  }
+
+  switch (operation) {
+    case "+":
+      resultat = number1 + number2;
+      break;
+    case "-":
+      resultat = number1 - number2;
+      break;
+    case "*":
+      resultat = number1 * number2;
+      break;
+    case "/":
+      if (number2 === 0) {
+        informationFail.textContent = "Division par zéro impossible.";
+        return;
+      }
+      resultat = number1 / number2;
+      break;
+    default:
+      informationFail.textContent = "Veuillez sélectionner une opération.";
+      return;
+  }
+
+  alert(number1 && number2, resultat);
+  resultDisplay.textContent = resultat;
+}

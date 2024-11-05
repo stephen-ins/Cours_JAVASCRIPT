@@ -1,10 +1,9 @@
-console.log("test");
+// console.log("test");
 
 const itemBlock1 = document.querySelector(".background__lightblue");
 console.log(itemBlock1);
 
 itemBlock1.addEventListener("click", function () {
-  //   console.log("test");
   console.log(this.classList[1]);
 
   let classeActuelle = this.classList[1];
@@ -449,21 +448,28 @@ function calculate(event) {
   const informationFail = document.getElementById("information__fail");
 
   let resultat;
+  let calculation;
 
   if (isNaN(number1) || isNaN(number2)) {
     informationFail.textContent = "Veuillez entrer des nombres valides.";
     return;
   }
+  informationFail.textContent = "";
 
   switch (operation) {
     case "+":
       resultat = number1 + number2;
+      calculation = `${number1} + ${number2} = ${resultat}`;
       break;
     case "-":
       resultat = number1 - number2;
+      calculation = `${number1} - ${number2} = ${resultat}`;
+
       break;
     case "*":
       resultat = number1 * number2;
+      calculation = `${number1} * ${number2} = ${resultat}`;
+
       break;
     case "/":
       if (number2 === 0) {
@@ -471,12 +477,108 @@ function calculate(event) {
         return;
       }
       resultat = number1 / number2;
+      calculation = `${number1} / ${number2} = ${resultat}`;
+
       break;
     default:
       informationFail.textContent = "Veuillez sélectionner une opération.";
       return;
   }
 
-  alert(number1 && number2, resultat);
+  alert(calculation);
+  // cumulativeResult += resultat;
+  // alert(`Calcul: ${calculation}\nRésultat cumulé: ${cumulativeResult}`);
   resultDisplay.textContent = resultat;
+
+  const inputNumber1 = document.querySelector("#number1");
+  const hiddenMessage1 = document.getElementById("hiddenMessage1");
+  const inputNumber2 = document.querySelector("#number2");
+  const hiddenMessage2 = document.getElementById("hiddenMessage2");
+  const calculSelect = document.querySelector("#calcul__select");
+  const hiddenMessage3 = document.getElementById("hiddenMessage3");
+
+  inputNumber1.addEventListener("mouseover", () => {
+    hiddenMessage1.style.display = "block";
+  });
+
+  inputNumber1.addEventListener("mouseout", () => {
+    hiddenMessage1.style.display = "none";
+  });
+
+  inputNumber2.addEventListener("mouseover", () => {
+    hiddenMessage2.style.display = "block";
+  });
+
+  inputNumber2.addEventListener("mouseout", () => {
+    hiddenMessage2.style.display = "none";
+  });
+
+  calculSelect.addEventListener("mouseover", () => {
+    hiddenMessage3.style.display = "block";
+  });
+
+  calculSelect.addEventListener("mouseout", () => {
+    hiddenMessage3.style.display = "none";
+  });
+
+  const openButton = document.getElementById("openButton");
+  const closeButton = document.getElementById("closeButton");
+  const block = document.querySelector(".block");
+
+  function openBlock() {
+    block.style.display = "block";
+    openButton.style.display = "none";
+    closeButton.style.display = "inline";
+  }
+
+  function closeBlock() {
+    block.style.display = "none";
+    openButton.style.display = "inline";
+    closeButton.style.display = "none";
+  }
+
+  openButton.addEventListener("click", openBlock);
+  closeButton.addEventListener("click", closeBlock);
 }
+
+// Exercice la galerie JS
+
+function showLargePhoto(thumbnail) {
+  const largeImage = document.getElementById("largeImage");
+  const caption = document.getElementById("caption");
+
+  largeImage.src = thumbnail.src;
+  largeImage.alt = thumbnail.alt;
+  caption.textContent = thumbnail.alt;
+}
+
+function showCaption() {
+  const caption = document.getElementById("caption");
+  caption.style.display = "block";
+}
+
+function hideCaption() {
+  const caption = document.getElementById("caption");
+  caption.style.display = "none";
+}
+
+// Exercice la recopie
+
+function copyText() {
+  const inputText = document.getElementById("inputText").value;
+  const outputText = document.getElementById("outputText");
+  outputText.value = inputText;
+}
+
+// Exercice calcul cube et carré
+
+function calculate() {
+  const inputNumber = document.getElementById("inputNumber").value;
+  const carreValue = document.getElementById("carreValue");
+  const cubeValue = document.getElementById("cubeValue");
+
+  carreValue.textContent = inputNumber * inputNumber;
+  cubeValue.textContent = inputNumber * inputNumber * inputNumber;
+}
+
+// Exercice du carre

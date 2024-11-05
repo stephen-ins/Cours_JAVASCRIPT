@@ -5,8 +5,6 @@ body {
   font-size: 16x;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 0 auto;
-  top: 0;
-  left: 0;
 }
 
 h1 {
@@ -43,6 +41,7 @@ h1 {
   background-color: #1e233771;
 }
 form {
+  margin-top: 40px;
   width: 100%;
   height: 100%;
   display: flex;
@@ -50,8 +49,8 @@ form {
   align-items: center;
 }
 .block {
+  height: 100vh;
   width: 1000px;
-  height: 800px;
   padding: 20px;
   background-color: #00000052;
   border: 2px solid #00000057;
@@ -95,13 +94,36 @@ form {
 
 .information__fail {
   text-align: center;
+  font-weight: bold;
   width: 80%;
   height: 40px;
   font-size: 1.3rem;
   margin: 0 20px;
   margin-top: 20px;
-  color: rgb(158, 25, 25);
+  color: rgb(228, 79, 79);
   letter-spacing: 4px;
+}
+
+.hidden__message3 {
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #0cac21;
+}
+
+.hidden__message1,
+.hidden__message2 {
+  display: none;
+  text-align: center;
+  width: 80%;
+  height: 50px;
+  font-size: 1.3rem;
+  align-content: center;
+  color: rgb(40, 36, 36);
+  background-color: rgba(220, 20, 20, 0.61);
+  letter-spacing: 4px;
+  border: #000 solid 1px;
+  border-radius: 20px;
+  font-weight: bold;
 }
 
 .calcul__select:hover {
@@ -148,3 +170,5 @@ form {
   -webkit-box-shadow: 0px 4px 32px 10px rgba(0, 0, 0, 0.43);
   box-shadow: 0px 4px 32px 10px rgba(0, 0, 0, 0.43);
 }
+
+

@@ -1,4 +1,4 @@
-@import url(../01-Entrainement/css/reset.css);
+@import url(../../01-Entrainement/css/reset.css);
 
 html,
 body {
@@ -170,5 +170,3 @@ form {
   -webkit-box-shadow: 0px 4px 32px 10px rgba(0, 0, 0, 0.43);
   box-shadow: 0px 4px 32px 10px rgba(0, 0, 0, 0.43);
 }
-
-

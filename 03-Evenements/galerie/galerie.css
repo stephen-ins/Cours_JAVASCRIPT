@@ -1,4 +1,4 @@
-@import url(../01-Entrainement/css/reset.css);
+@import url(../../01-Entrainement/css/reset.css);
 
 html,
 body {
@@ -147,7 +147,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 600px;
+  height: 400px;
   width: 100%;
 }
 
@@ -162,34 +162,74 @@ body {
   margin: 40px;
   position: absolute;
   top: 200px;
-  left: 150px;
+  left: 350px;
 }
 
 .blue__carre {
   position: absolute;
+  top: 250px;
+  left: 700px;
   border: #fff 1px solid;
   width: 150px;
   height: 150px;
-  /* margin: 40px; */
   border-radius: 6px;
+  transition: 1s;
   background: linear-gradient(#079bf193, #0505cff4, #1b86c4c0);
 }
 
 .container5 {
-  /* position: relative; */
+  position: relative;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  height: 600px;
+  height: 400px;
   width: 100%;
 }
 
+.content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  width: 100%;
+  height: 200px;
+  cursor: pointer;
+}
+
 .green__carre {
-  /* position: absolute; */
+  position: absolute;
+  display: inline-block;
   border: #fff 1px solid;
   width: 150px;
   height: 150px;
   margin: 40px;
   border-radius: 6px;
+  transition: 1s;
   background: linear-gradient(#6ecb596a, #14b80bea, #54bd753a);
+}
+
+.container6 {
+  width: 100%;
+  height: 400px;
+  background-color: #00000039;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button__toggle,
+.dropdown__menu {
+  align-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 20px;
+  width: 500px;
+  height: 80px;
+  text-decoration: none;
+  border-radius: 15px;
+}
+
+.button__toggle:hover {
+  background-color: #bda2a230;
+  transition: 0.7s;
 }

@@ -3,11 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="galerie.css" />
+    <link rel="stylesheet" href="../galerie/galerie.css" />
     <title>La galerie et autres exos</title>
   </head>
   <body>
     <div class="container">
+      <div class="block background__lightblue"></div>
+
       <h2 class="title__h2">Exercice numéro 1 : La galerie</h2>
 
       <div class="container1">
@@ -135,12 +137,31 @@
       </section>
       <section class="exercice5">
         <h2 class="title__h2">Exercice numéro 5 : Déplacement au scroll</h2>
-        <div class="container5">
-          <div id="greenCarre" class="green__carre"></div>
+        <div class="container5" id="container5">
+          <div class="content">
+            <div id="greenCarre" class="green__carre"></div>
+          </div>
+        </div>
+      </section>
+      <section class="exercice6">
+        <h2 class="title__h2">Exercice numéro 6 : Le menu déroulant</h2>
+        <div class="container6" id="container6">
+          <div class="dropdown__button" id="dropdownButton">
+            <button class="button__toggle" id="buttonToggle">
+              SELECTIONNER VOTRE COMMENTAIRE
+            </button>
+            <ul class="dropdown__menu" id="myDropdown">
+              <li><a class="dropdown__item" href="#">INSUFFISANT</a></li>
+              <li><a class="dropdown__item" href="#">PASSABLE</a></li>
+              <li><a class="dropdown__item" href="#">SATISFAISANT</a></li>
+              <li><a class="dropdown__item" href="#">BIEN</a></li>
+              <li><a class="dropdown__item" href="#">TRES BIEN</a></li>
+              <li><a class="dropdown__item" href="#">EXCELLENT</a></li>
+            </ul>
+          </div>
         </div>
       </section>
     </div>
-
-    <script src="script.js"></script>
+    <script src="galerie.js"></script>
   </body>
 </html>

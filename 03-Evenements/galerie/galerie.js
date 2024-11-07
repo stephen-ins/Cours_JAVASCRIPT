@@ -118,5 +118,3 @@ scrollContainer.addEventListener("wheel", (evt) => {
 });
 
 // le menu déroulant
-
-

@@ -104,9 +104,9 @@ scrollContainer.addEventListener("wheel", (evt) => {
 
   // Ajuster la position en fonction de la direction de scroll
   if (evt.deltaY > 0) {
-    startPosition += 25; // Scroll vers la droite
+    startPosition += 40; // Scroll vers la droite
   } else {
-    startPosition -= 25; // Scroll vers la gauche
+    startPosition -= 40; // Scroll vers la gauche
   }
 
   // Empêcher la position de dépasser les limites

@@ -126,7 +126,7 @@ function obtenirTarif(age, experience, sinistre, fidelite) {
       case "ORANGE":
         tarif = "VERT";
         break;
-      case "VEFT":
+      case "VERT":
         tarif = "BLEU";
         break;
     }

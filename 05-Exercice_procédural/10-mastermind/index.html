@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Exercice procédural | Question 10 : Le Mastermind</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title"></h1>
+      <img
+        src="../assets/images/logo/mastermind_logo.jpg"
+        alt="logo du jeu mastermind "
+      />
+      <div class="content">
+        <section class="barre__blanche"></section>
+        <p class="title__h2">
+          Le but du jeu du Mastermind est pour l'un des joueurs d'élaborer une
+          combinaison difficilement déchiffrable et pour son adversaire, de
+          deviner en un minimum de coup cette combinaison cachée. En l'occurence
+          ici, l'ordinateur s'occupera aléatoirement de la combinaison : 4 pions
+          à deviner, 12 tentatives pour vous, joueur.
+        </p>
+        <section class="barre__blanche"></section>
+
+        <div class="game__btn" id="gameButton">
+          <button class="button" type="button">
+            <img
+              src="../assets/images/images_mastermind/colors_balls.png"
+              alt="game__button"
+              class="game__button"
+            />
+          </button>
+        </div>
+        <div class="game__table" id="gameTable">
+          <div class="pion__position" id="pionPostion">
+            <table>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+          <section class="game__plateau" id="gamePlateau"></section>
+          <div class="pion__select" id="pionSelect">
+            <section class="pion__color">
+              <div class="color blue"></div>
+              <div class="color red"></div>
+              <div class="color yellow"></div>
+              <div class="color green"></div>
+              <div class="color white"></div>
+              <div class="color black"></div>
+            </section>
+          </div>
+          <button class="button__submit">VALIDER</button>
+        </div>
+
+        <div class="attempts" id="nbAttempts">Vous avez 14 tentatives !</div>
+        <!-- <div class="result__message" id="resultMessage">Votre résultat</div> -->
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

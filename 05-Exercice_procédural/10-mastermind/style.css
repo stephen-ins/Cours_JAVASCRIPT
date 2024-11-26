@@ -94,7 +94,7 @@ td {
   vertical-align: middle;
   color: white;
   line-height: 50px;
-  /* border: 1px solid #000; */
+  transition: all 0.30s;
 }
 
 .game__table {
@@ -154,6 +154,18 @@ td {
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   justify-content: center;
+}
+
+.bienPlace {
+  background-color: white;
+}
+
+.malPlace {
+  background-color: rgb(49, 29, 29);
+  cursor: pointer;
+  border: #ffffff solid 2px;
+  transition: all 2s;
+  
 }
 
 .color {
@@ -228,9 +240,9 @@ td {
   cursor: pointer;
 }
 
-.button__submit {
+.reload__game {
   width: 150px;
-  height: 60px;
+  height: 70px;
   background-color: #ffffff;
   border-radius: 0.75rem;
   font-weight: bold;
@@ -239,26 +251,28 @@ td {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  text-align: left;
   -webkit-box-shadow: 2px 4px 21px 0px rgba(0, 0, 0, 0.72);
-  box-shadow: 2px 4px 21px 0px rgba(0, 0, 0, 0.72);
+  box-shadow: 2px 4px 21px 0px rgba(7, 4, 4, 0.72);
 }
 
-.button__submit:hover {
+.reload__game:hover {
   background-color: #00000057;
-  color: whitesmoke;
+  color: rgb(254, 20, 20);
   -webkit-box-shadow: 2px 4px 21px 0px rgba(0, 0, 0, 0.72);
   box-shadow: 2px 4px 21px 0px rgba(0, 0, 0, 0.72);
   transform: scale(1.1);
   transition: all 0.5s ease-in-out;
 }
 
-.attempts {
+.message {
+  font-weight: bold;
   text-align: center;
   background-color: rgb(240, 248, 255);
-  color: orange;
+  color: rgb(216, 18, 15);
   font-size: 2rem;
-  width: 60%;
-  height: 50px;
+  width: 80%;
+  height: 80px;
   border: #00000066 solid 2px;
   border-radius: 4rem;
   display: flex;
@@ -318,7 +332,7 @@ td {
     width: 60%;
     height: auto;
   }
-  .attempts {
+  .message {
     font-size: 1.5rem;
   }
 }
@@ -335,7 +349,7 @@ td {
     width: 80%;
     height: auto;
   }
-  .attempts {
+  .message {
     font-size: 1rem;
     height: 100px;
   }
@@ -370,7 +384,7 @@ td {
   .content {
     width: 150px;
   }
-  .attempts {
+  .message {
     border-radius: 0.5rem;
   }
 }

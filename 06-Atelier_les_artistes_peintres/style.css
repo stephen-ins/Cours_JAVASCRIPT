@@ -1,0 +1,164 @@
+@import url(reset.css);
+
+@font-face {
+  font-family: "roboto";
+  src: url(../assets/atelier_les-artistes-peintres/font/Roboto/woff/roboto-regular-webfont.woff2)
+      format("woff2"),
+    url(../assets/atelier_les-artistes-peintres/font/Roboto/woff/roboto-regular-webfont.woff)
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "inspiration";
+  src: url(../assets/atelier_les-artistes-peintres/font/Inspiration/woff/inspiration-regular-webfont.woff2)
+      format("woff2"),
+    url(../assets/atelier_les-artistes-peintres/font/Inspiration/woff/inspiration-regular-webfont.woff)
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body {
+  font-size: 16px;
+  font-family: "roboto";
+  background-color: rgb(86, 20, 5);
+  margin: 0 4rem;
+}
+
+.header {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  /* margin: 2rem 10rem; */
+}
+
+.title__h1 {
+  font-size: 4rem;
+  padding: 2rem 0.75rem;
+  font-family: "inspiration";
+  color: antiquewhite;
+}
+
+.logo__des__artistes {
+  width: 180px;
+  height: 180px;
+  align-content: center;
+  justify-content: center;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.nav {
+  width: 100%;
+  height: 80px;
+  background-color: rgb(71, 7, 7);
+  /* margin: 1rem 10rem; */
+  color: antiquewhite;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.nav__item {
+  text-decoration: none;
+  width: 15%;
+  font-size: 1.3rem;
+  height: 70px;
+  text-align: center;
+  align-content: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+.nav__item:hover {
+  color: rgb(207, 82, 9);
+  background-color: rgba(126, 36, 36, 0.534);
+  border-left: 1px solid #cd620b;
+  border-right: 1px solid #cd620b;
+}
+.page1 {
+  width: 100%;
+  height: auto;
+  background-color: rgb(202, 186, 168);
+}
+
+.baniere {
+  width: 100%;
+  height: 240px;
+  display: flex;
+  background-color: rgb(73, 184, 174);
+}
+
+.baniere__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.img__baniere {
+  padding: 1rem;
+  cursor: pointer;
+}
+.title__h2 {
+  color: antiquewhite;
+  font-weight: bold;
+  font-size: 2.5rem;
+  padding: 1rem;
+}
+.paragraph1 {
+  color: antiquewhite;
+  text-align: justify;
+  padding: 1rem;
+}
+
+.aside__menu {
+  width: 30%;
+  height: auto;
+  background-color: rgb(73, 184, 174);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.aside__item {
+  color: antiquewhite;
+  width: 60%;
+  height: auto;
+  font-size: 1.5rem;
+  padding: 1.3rem 1.3rem 1.2rem 0;
+  border-bottom: 4px solid antiquewhite;
+  text-align: start;
+  cursor: pointer;
+}
+
+.aside__item:hover {
+  transition: all 1s;
+  transform: scale(1.1);
+}
+
+.footer {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  /* padding: 2rem 10rem; */
+  color: antiquewhite;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.fa-copyright {
+  padding: 1rem 0.5rem;
+}
+
+.copyright {
+  padding: 1rem;
+}

@@ -75,17 +75,13 @@ const paintMonet = [
   { src: "Nymphéas-1916.png", title: "Nymphéas (1916)" },
 ];
 
-// déclaration de la zone 'gallery__paint' à remplacer
-const sectionGallery = document.querySelector(".gallery");
-// console.log(sectionGallery);
-
 function insertionPaint(peintre) {
+  const sectionGallery = document.querySelector(".gallery");
+
   // j'efface le tableau actuel
   sectionGallery.innerHTML = "";
 
   let data;
-
-  console.log(peintre);
 
   switch (peintre) {
     case "Picasso":
@@ -108,16 +104,16 @@ function insertionPaint(peintre) {
       break;
   }
 
-  console.log(data);
+  // console.log(data);
 
-  const animation = document.createElement("section");
-  animation.classList.add("animation");
+  const blockArtist = document.createElement("section");
+  blockArtist.classList.add("block__animate");
 
   const titlePeintre = document.createElement("h3");
   titlePeintre.classList.add("title__h3");
   titlePeintre.innerText = `Galerie ${peintre}`;
-  animation.appendChild(titlePeintre);
-  console.log(titlePeintre);
+  blockArtist.appendChild(titlePeintre);
+  // console.log(titlePeintre);
 
   const galleryPaint = document.createElement("div");
   galleryPaint.classList.add("gallery__paint");
@@ -134,19 +130,28 @@ function insertionPaint(peintre) {
     img.src = `../assets/atelier_les-artistes-peintres/peintures/galerie_${peintre}/${painting.src}`;
     img.alt = painting.title;
     img.classList.add("picture");
-    console.log(img);
+    // console.log(img);
 
     const figcaption = document.createElement("figcaption");
     figcaption.classList.add("figcaption");
     figcaption.textContent = painting.title;
-    console.log(figcaption);
+    // console.log(figcaption);
 
-    figure.appendChild(img);
-    figure.appendChild(figcaption);
     galleryPaint.appendChild(figure);
+    figure.appendChild(figcaption);
+    figure.appendChild(img);
   });
 
+  blockArtist.appendChild(galleryPaint);
+  blockArtist.appendChild(galleryPaint);
+  blockArtist.appendChild(titlePeintre);
+
+  console.log(blockArtist);
+
   sectionGallery.appendChild(galleryPaint);
+  // ce qui manquait
+  sectionGallery.appendChild(blockArtist);
+  console.log(sectionGallery);
 }
 
 // Evenements au clic sur chaque item des artistes pour appeler leur galerie

@@ -232,3 +232,32 @@ body {
 .copyright {
   padding: 1rem;
 }
+
+/* animation */
+
+.block__animate {
+  position: absolute; /* Nécessaire pour manipuler top/left */
+  animation-name: bounce;
+  animation-duration: 2.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards; /* Maintient la position finale */
+}
+
+@keyframes bounce {
+  0% {
+    top: -1000px;
+    left: 0; /* Assurez-vous de définir une position initiale */
+  }
+  25% {
+    top: -10px; /* Descente initiale */
+    left: +50px;
+  }
+  75% {
+    top: -50px; /* Descente intermédiaire */
+    left: -50px;
+  }
+  100% {
+    top: -90px; /* Position finale */
+    left: 0; /* Optionnel, si vous voulez déplacer horizontalement */
+  }
+}

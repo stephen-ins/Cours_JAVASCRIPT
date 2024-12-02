@@ -107,7 +107,7 @@ function insertionPaint(peintre) {
   // console.log(data);
 
   const blockArtist = document.createElement("section");
-  blockArtist.classList.add("block__animate");
+  blockArtist.classList.add("title__animate");
 
   const titlePeintre = document.createElement("h3");
   titlePeintre.classList.add("title__h3");
@@ -117,6 +117,7 @@ function insertionPaint(peintre) {
 
   const galleryPaint = document.createElement("div");
   galleryPaint.classList.add("gallery__paint");
+  galleryPaint.classList.add("gallery__animate");
   // console.log(galleryPaint);
 
   // boucle sur les tableaux
@@ -138,20 +139,15 @@ function insertionPaint(peintre) {
     // console.log(figcaption);
 
     galleryPaint.appendChild(figure);
-    figure.appendChild(figcaption);
     figure.appendChild(img);
+    figure.appendChild(figcaption);
   });
 
-  blockArtist.appendChild(galleryPaint);
-  blockArtist.appendChild(galleryPaint);
   blockArtist.appendChild(titlePeintre);
+  blockArtist.appendChild(galleryPaint);
 
-  console.log(blockArtist);
-
-  sectionGallery.appendChild(galleryPaint);
-  // ce qui manquait
   sectionGallery.appendChild(blockArtist);
-  console.log(sectionGallery);
+  sectionGallery.appendChild(galleryPaint);
 }
 
 // Evenements au clic sur chaque item des artistes pour appeler leur galerie
@@ -164,3 +160,13 @@ navItem.forEach((item) => {
     insertionPaint(item.textContent);
   });
 });
+
+const menuNav = document.querySelector(".nav");
+console.log(menuNav);
+const iconeBurger = document.querySelector("#iconeBurger");
+
+function showMenuBurger() {
+  menuNav.classList.toggle("toggleNav");
+}
+
+iconeBurger.addEventListener("click", showMenuBurger);

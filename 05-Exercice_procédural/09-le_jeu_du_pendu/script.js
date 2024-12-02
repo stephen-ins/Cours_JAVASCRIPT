@@ -216,7 +216,6 @@ function selectLetter(letter, button) {
     resultMessage.textContent = "Vous avez trouvé !";
     resultMessage.className = "win";
     alphabetLetter.innerHTML = "";
-
   }
 }
 
@@ -226,3 +225,9 @@ function initGame() {
 }
 
 initGame();
+
+const gameButton = document.querySelector(".button__submit");
+console.log("bouton rejouer", gameButton);
+gameButton.addEventListener("click", () => {
+  location.reload();
+});

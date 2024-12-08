@@ -4,10 +4,19 @@ export const Header = (datas) => {
   // Picasso in object toute les données de Picasso
   for (let key in datas) {
     // console.log(key);
+
+    const activeLink = window.location.href.includes(`?peintre=${key}`);
     navLink += ` <li class="nav__item">
-              <a href="?peintre=${key}" class="nav__link">${key}</a>
+              <a href="?peintre=${key}" class="nav__link ${
+      activeLink ? "nav__link__hover" : ""
+    }">${key}</a>
              </li>`;
   }
+
+  //   navLink += ` <li class="nav__item">
+  //             <a href="?peintre=${key}" class="nav__link">${key}</a>
+  //            </li>`;
+  // }
 
   //   console.log(navLink);
 
@@ -32,15 +41,12 @@ export const Header = (datas) => {
 
 // Exo : créer une fonction permettant de gérer le menu déroulant en cliquant sur le bouton hamburger
 
-// iconeBurger.addEventListener("click", showMenuBurger);
-// console.log("click: ", iconeBurger);
-
 export const showMenuBurger = () => {
   const iconeBurger = document.querySelector(".icone__burger");
   const navList = document.querySelector(".nav__list");
-  console.log(navList);
+  // console.log(navList);
   iconeBurger.addEventListener("click", () => {
-    navList.classList.toggle("active");
+    navList.classList.toggle("nav__list__toggle");
   });
 };
 
@@ -50,10 +56,9 @@ export const activeNavLink = () => {
   const navLinkActive = document.querySelectorAll(".nav__link");
   navLinkActive.forEach((link) => {
     link.addEventListener("click", function (event) {
-      navLinkActive.forEach((link) =>
-        link.classList.remove("nav__link__active")
-      );
-      this.classList.add("nav__link__active");
+      // navLinkActive.forEach((link) => link.classList.remove(""));
+      // this.classList.add("nav__link.active");
     });
   });
 };
+

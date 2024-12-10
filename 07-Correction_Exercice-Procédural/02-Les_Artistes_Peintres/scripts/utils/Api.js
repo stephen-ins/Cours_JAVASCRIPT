@@ -38,12 +38,12 @@ export const getTableauxByPeintre = async () => {
 
   // On entre dans le if seulement dans le cas où l'indice ?peintre= n'est pas défini dans l'URL, on entre uniquement dans ce cas dans la première visit de la page Web.
   if (!peintre) {
-    console.log(Object.keys(datas)[0]);
-    console.log("pas de params dans l'url");
+    // console.log(Object.keys(datas)[0]);
+    // console.log("pas de params dans l'url");
 
     // Récupère le premier indice(index) de l'objet datas, ici "Caillebotte".
     const index = Object.keys(datas)[0];
-    console.log(index);
+    // console.log(index);
 
     // data =  datas["Caillebotte"];
     data = datas[index];

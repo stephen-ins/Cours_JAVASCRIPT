@@ -7,16 +7,11 @@ export const Header = (datas) => {
 
     const activeLink = window.location.href.includes(`?peintre=${key}`);
     navLink += ` <li class="nav__item">
-              <a href="?peintre=${key}" class="nav__link ${
+              <a href="?peintre=${key}" "data-peintre="${key}" class="nav__link ${
       activeLink ? "nav__link__hover" : ""
     }">${key}</a>
              </li>`;
   }
-
-  //   navLink += ` <li class="nav__item">
-  //             <a href="?peintre=${key}" class="nav__link">${key}</a>
-  //            </li>`;
-  // }
 
   //   console.log(navLink);
 
@@ -42,6 +37,7 @@ export const Header = (datas) => {
 // Exo : créer une fonction permettant de gérer le menu déroulant en cliquant sur le bouton hamburger
 
 export const showMenuBurger = () => {
+  // console.log("showMenuBurger");
   const iconeBurger = document.querySelector(".icone__burger");
   const navList = document.querySelector(".nav__list");
   // console.log(navList);
@@ -50,14 +46,17 @@ export const showMenuBurger = () => {
   });
 };
 
+
+
+
 // Exo : créer une fonction pour les liens actifs, si dans l'url ?peintre=Picasso, le lien <a>"Picasso" devient actif
 
 export const activeNavLink = () => {
   const navLinkActive = document.querySelectorAll(".nav__link");
   navLinkActive.forEach((link) => {
-    link.addEventListener("click", function (event) {
+    link.addEventListener("click", function () {
       // navLinkActive.forEach((link) => link.classList.remove(""));
-      // this.classList.add("nav__link.active");
+      this.classList.add("nav__link.active");
     });
   });
 };

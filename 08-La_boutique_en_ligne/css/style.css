@@ -188,6 +188,11 @@ body {
   font-weight: 500;
 }
 
+.button__submit:hover {
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+}
+
 .footer {
   display: flex;
   justify-content: center;

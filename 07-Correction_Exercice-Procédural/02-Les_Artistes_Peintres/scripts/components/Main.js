@@ -24,7 +24,8 @@ export const Main = (datas) => {
     // console.log(peintureContent);
 
     // On boucle les tableaux récupérées dans le fichier data.json et on génère une card <figure> par tour de boucle, la boucle tourne autant de fois qu'il y a de tableaux pour la peintre
-    dataTableauxByPeintre.data.forEach((tableau) => {
+    dataTableauxByPeintre.data.forEach((tableau, index) => {
+      // console.log(index);
       // Création de la balise <figure>
       const card = document.createElement("figure");
       card.classList.add("card");
@@ -38,6 +39,8 @@ export const Main = (datas) => {
         "alt",
         `Tableau ${dataTableauxByPeintre.name} ${tableau}`
       );
+      picture.setAttribute("data-position", index);
+      picture.setAttribute("data-peintre", dataTableauxByPeintre.name);
       picture.src = `assets/images/${dataTableauxByPeintre.name}/${tableau}`;
 
       // Création de la balise <figcaption> pour la légende de l'image
@@ -69,7 +72,7 @@ export const Main = (datas) => {
     return blockAnimation.outerHTML;
   };
 
-  displayGalery();
+  // displayGalery();
 
   return `
      <main class="main">

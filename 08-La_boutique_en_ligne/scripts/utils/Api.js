@@ -84,4 +84,4 @@ export const getProducts = async () => {
   return dataProducts;
 };
 
-console.log(getProducts());
+// console.log(getProducts());

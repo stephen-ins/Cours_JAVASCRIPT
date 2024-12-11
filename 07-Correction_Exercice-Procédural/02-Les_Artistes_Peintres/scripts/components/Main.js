@@ -14,7 +14,7 @@ export const Main = (datas) => {
     peintureTitle.classList.add("peinture__title");
     peintureTitle.innerText = `Galerie ${dataTableauxByPeintre.name}`;
 
-    // On injecte comme enfant le titre <h2> au blockAnimation global
+    // On inje{cte comme enfant le titre <h2> au blockAnimation global
     blockAnimation.appendChild(peintureTitle);
     // console.log(blockAnimation);
 

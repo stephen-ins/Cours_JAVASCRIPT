@@ -11,10 +11,77 @@ export const getData = async () => {
     // console.log(response.json());
     return response.json();
   } catch (error) {
-    return new Error("Quelque chose ne va pas.");
+    return new Error("Quelque chose ne va pas !");
   }
 };
 
-export const getPeintres = async () => {};
+export const getProducts = async () => {
+  const dataProducts = await getData();
+  // console.log(dataProducts);
 
-export const getTableauxByPeintre = async () => {};
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  let product = urlParams.get("product");
+  // console.log(product);
+
+  let data;
+
+  if (!product) {
+    // console.log("pas de params dans l'url");
+    // console.log(Object.keys(dataProducts)[0]);
+
+    const index = Object.keys(dataProducts)[0];
+    // console.log(index);
+    data = dataProducts[index];
+    product = index;
+    // console.log(data);
+
+    product = index;
+    // console.log(index);
+    // console.log(data);
+    // console.log(product);
+  }
+
+  for (const key in dataProducts) {
+    if (key === product) {
+      // console.log("key :" + key);
+      // console.log("product :" + product);
+
+      // data =  dataProducts["key"];
+      data = dataProducts[key];
+      // console.log(data);
+
+      // switch (product) {
+      //   case "Chapeau":
+      //     data = dataProducts.Chapeau;
+      //     break;
+      //   case "Pull":
+      //     data = dataProducts.Pull;
+      //     break;
+      //   case "Chaussure":
+      //     data = dataProducts.Chaussure;
+      //     break;
+      //   case "Chaussette":
+      //     data = dataProducts.Chaussette;
+      //     break;
+      //   case "Robe":
+      //     data = dataProducts.Robe;
+      //     break;
+      //   case "Tee-shirt":
+      //     data = dataProducts.Tee_shirt;
+      //     break;
+      //   default:
+      //     data = dataProducts.Chapeau;
+      // }
+
+      // return {
+      //   name: product,
+      //   data: data.products,
+      // };
+    }
+  }
+
+  return dataProducts;
+};
+
+console.log(getProducts());

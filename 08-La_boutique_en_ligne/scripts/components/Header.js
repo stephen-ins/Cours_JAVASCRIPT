@@ -40,21 +40,26 @@ export const returnMainHome = () => {
 
 export const goCart = () => {
   const cartLink = document.querySelector(".nav__link:last-child");
-  
+
   cartLink.addEventListener("click", (e) => {
     e.preventDefault();
     const cart = getCart();
-    
+
     if (cart.length === 0) {
       alert("Votre panier est vide");
       return;
     }
 
     const total = getCartTotal();
-    const cartContent = cart.map(item => 
-      `${item.name} - ${item.price}€ x ${item.quantity} = ${item.price * item.quantity}€`
-    ).join('\n');
-    
+    const cartContent = cart
+      .map(
+        (item) =>
+          `${item.name} - ${item.price}€ x ${item.quantity} = ${
+            item.price * item.quantity
+          }€`
+      )
+      .join("\n");
+
     alert(`Contenu du panier :\n\n${cartContent}\n\nTotal : ${total}€`);
   });
 };

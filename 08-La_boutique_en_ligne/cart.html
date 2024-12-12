@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>La sape de dingue | Panier</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="header__block">
+          <a href="#" class="header__logo">
+            <img src="assets/logos/logo_boutique.png" alt="logo" class="logo" />
+          </a>
+          <div class="header__title">La sape de dingue</div>
+        </div>
+
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#" class="nav__link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Panier</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main class="main">
+        <section class="cart__content">
+          <h2 class="cart__title">Ma commande</h2>
+
+          <table class="cart__table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Nom</th>
+                <th>Quantité</th>
+                <th>Prix Unitaire</th>
+                <th>Prix Total</th>
+                <th>Enlever -</th>
+                <th>Rajouter +</th>
+                <th>Supprimer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <img src="" alt="" class="cart__image" />
+                </td>
+                <td></td>
+                <td class="quantity__value"></td>
+                <td></td>
+                <td></td>
+                <td>
+                  <button class="button__command-remove decrease">-</button>
+                </td>
+                <td>
+                  <button class="button__command-add increase">+</button>
+                </td>
+                <td>
+                  <button class="delete__btn">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="5">Total du panier</td>
+                <td colspan="3">Prix total affiché</td>
+              </tr>
+            </tfoot>
+          </table>
+          <div class="cart__actions">
+            <button class="button__submit clear__cart">Vider le panier</button>
+            <button class="button__submit validate__cart">
+              Valider la commande
+            </button>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p class="copyright">&copy; 2025 - Stephen Ins</p>
+      </footer>
+    </div>
+
+    <!-- <script src="scripts/pages/cart.js" type="module"></script> -->
+  </body>
+</html>

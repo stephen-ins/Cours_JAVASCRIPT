@@ -1,8 +1,8 @@
 import { getProducts } from "../utils/Api.js";
 import { Header, returnMainHome } from "../components/Header.js";
-import { Main, displayProductDetails } from "../components/Main.js";
+import { Main } from "../components/Main.js";
 import { Footer } from "../components/Footer.js";
-import { addToCart } from "../utils/Cart.js";
+// import { addToCart } from "../utils/Cart.js";
 
 const displayData = (products) => {
   // console.log(products);
@@ -18,12 +18,6 @@ const displayData = (products) => {
       `;
 
   //  appel des fonctions ici
-
-  // Cette ligne de code appelle la fonction displayProductDetails en lui passant deux arguments : null et products.
-  // La fonction displayProductDetails est responsable d'afficher les détails d'un produit lorsque l'utilisateur clique sur le bouton "Voir plus".
-  // Le premier argument, null, n'est pas utilisé dans cette fonction, mais il est passé pour respecter la signature de la fonction.
-  // Le deuxième argument, products, est un objet contenant les données des produits, qui est utilisé pour trouver et afficher les détails du produit sélectionné.
-  displayProductDetails(null, products);
 
   // Fonction pour retourner à la page d'accueil lorsque l'utilisateur clique sur le logo ou bien la navLink "Home"
   returnMainHome();

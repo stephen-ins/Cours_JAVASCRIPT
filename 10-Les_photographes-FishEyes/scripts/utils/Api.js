@@ -13,15 +13,15 @@ export const getData = async () => {
   }
 };
 
-export const getPhotographers = async () => {
+export const getProducts = async () => {
   const data = await getData();
-  // console.log(data.photographers);
-  return data.photographers;
+  // console.log(data.products);
+  return data.products;
 };
 
-export const getPhotographerById = async () => {
+export const getProductsById = async () => {
   // Windows.location.search permet de récupérer les paramêtres de recherche dans l'URL (ex: ?id=243)
-  // console.log("getPhotographerById");
+  // console.log("getProductsById");
 
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
@@ -31,13 +31,13 @@ export const getPhotographerById = async () => {
   // console.log(queryString);
   // console.log(urlParams);
 
-  const photographer = await getPhotographers();
-  // console.log(photographer);
+  const products = await getProducts();
+  // console.log(products);
   // filter : fonction qui permet de filtrer un résultat en fonction d'une condition
-  const data = photographer.filter((photographer) => {
+  const data = products.filter((product) => {
     // Si l'ID du produit est égal à l'id du produit dans l'URL (?id=243), alors on retourne le produit.
-    if (photographer.id == id) {
-      return photographer;
+    if (product.id == id) {
+      return product;
     }
   });
   // console.log(data);
@@ -46,27 +46,27 @@ export const getPhotographerById = async () => {
   return data[0];
 };
 
-// export const setProductLocalStorage = (id, arrayProduct) => {
-//   localStorage.setItem(id, arrayProduct);
-// };
+export const setProductLocalStorage = (id, arrayProduct) => {
+  localStorage.setItem(id, arrayProduct);
+};
 
-// export const getProductsLocalStorage = () => {
-//   // console.log(localStorage);
+export const getProductsLocalStorage = () => {
+  // console.log(localStorage);
 
-//   const items = { ...localStorage };
-//   // console.log(items);
-//   let itemsPanier = {};
+  const items = { ...localStorage };
+  // console.log(items);
+  let itemsPanier = {};
 
-//   //           124    L'ensemble des produits du panier
-//   for (const key in items) {
-//     // console.log(key);
-//     //              items[124]
-//     //              items[243]
-//     //              items[789]
-//     // console.log(items[key]);
-//     // JSON.parse permet de convertir une chaîne en objet JavaScript que nous pouvons manipuler pour afficher les données.
-//     itemsPanier[key] = JSON.parse(items[key]);
-//   }
-//   // console.log(itemsPanier);
-//   return itemsPanier;
-// };
+  //           124    L'ensemble des produits du panier
+  for (const key in items) {
+    // console.log(key);
+    //              items[124]
+    //              items[243]
+    //              items[789]
+    // console.log(items[key]);
+    // JSON.parse permet de convertir une chaîne en objet JavaScript que nous pouvons manipuler pour afficher les données.
+    itemsPanier[key] = JSON.parse(items[key]);
+  }
+  // console.log(itemsPanier);
+  return itemsPanier;
+};

@@ -1,11 +1,16 @@
-import { getData, getPhotographers } from "../utils/Api.js";
+import { getData, getProducts } from "../utils/Api.js";
 
-import { HeaderIndex } from "../components/HeaderIndex.js";
+import { Header } from "../components/Header.js";
 // console.log(Header());
 
-import { MainIndex, goToWall } from "../components/MainIndex.js";
-// console.log(MainIndex());
-// console.log(goToWall());
+import { Nav } from "../components/Nav.js";
+// console.log(Nav());
+
+import { Main } from "../components/Main.js";
+// console.log(Main());
+
+import { Footer } from "../components/Footer.js";
+// console.log(Footer());
 
 // Retourne une promesse 404 pour l'instant car le getData n'est pas en asynchrone
 getData();
@@ -14,17 +19,17 @@ const displayData = (data) => {
   const body = document.querySelector("body");
   body.innerHTML = `
     <div class="container">
-    ${HeaderIndex()}
-    ${MainIndex(data)}
+    ${Header()}
+    ${Nav()}
+    ${Main(data)}
+    ${Footer()}
     </div>
     `;
-
-  goToWall();
 };
 
 // Fonction asynchrone anonyme qui s'exécute automatiquement au chargement de la page index.html
 (async () => {
-  const data = await getPhotographers();
+  const data = await getProducts();
   // console.log(data);
 
   // On exécute la fonction displayData pour avoir un retour visuel sur la page

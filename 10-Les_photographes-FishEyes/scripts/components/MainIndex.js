@@ -1,10 +1,10 @@
 export const MainIndex = (data) => {
-    // console.log();
-  
-    let cards = "";
-    data.forEach((photographers) => {
-      console.log(photographers.id);
-      cards += `
+  // console.log();
+
+  let cards = "";
+  data.forEach((photographers) => {
+    // console.log(photographers.id);
+    cards += `
       
             <div class="card">
               <a href="photographers.html?id=${photographers.id}" class="link__photographer">
@@ -16,7 +16,7 @@ export const MainIndex = (data) => {
               </a>
   
               <div class="identity__content">
-                <a href="" class="link__photographer">
+                <a href="photographers.html?id=${photographers.id}" class="link__photographer">
                   <h2 class="title__h2">${photographers.name}</h2>
                 </a>
                 <p class="locality__paragraph">${photographers.city}, ${photographers.country}</p>
@@ -28,11 +28,11 @@ export const MainIndex = (data) => {
             </div>
   
       `;
-    });
-  
-    // console.log(cards);
-  
-    return `     
+  });
+
+  // console.log(cards);
+
+  return `     
   
         <main class="main">
           <section class="card__content">
@@ -41,17 +41,4 @@ export const MainIndex = (data) => {
            
           </section>
         </main>`;
-  };
-  
-  export const goToWall = () => {
-    const link = document.querySelectorAll(".link__photographer");
-    link.forEach((link) => {
-      link.addEventListener("click", (event) => {
-        // event.preventDefault();
-        // alert("click");
-        
-      });
-    });
-    return link;
-  };
-  
+};

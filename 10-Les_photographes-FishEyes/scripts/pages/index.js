@@ -1,38 +1,25 @@
-import { getData, getProducts } from "../utils/Api.js";
+import { getData, getPhotographers } from "../utils/Api.js";
+import { HeaderIndex } from "../components/HeaderIndex.js";
+import { MainIndex } from "../components/MainIndex.js";
 
-import { Header } from "../components/Header.js";
-// console.log(Header());
-
-import { Nav } from "../components/Nav.js";
-// console.log(Nav());
-
-import { Main } from "../components/Main.js";
-// console.log(Main());
-
-import { Footer } from "../components/Footer.js";
-// console.log(Footer());
-
-// Retourne une promesse 404 pour l'instant car le getData n'est pas en asynchrone
 getData();
 
 const displayData = (data) => {
   const body = document.querySelector("body");
   body.innerHTML = `
     <div class="container">
-    ${Header()}
-    ${Nav()}
-    ${Main(data)}
-    ${Footer()}
+    ${HeaderIndex()}
+    ${MainIndex(data)}
     </div>
     `;
 };
 
-// Fonction asynchrone anonyme qui s'exécute automatiquement au chargement de la page index.html
+// Fonction asynchrone anonyme qui s'exécute automatiquement
 (async () => {
-  const data = await getProducts();
-  // console.log(data);
-
-  // On exécute la fonction displayData pour avoir un retour visuel sur la page
-  // On transmet le résultat de la fonction getProducts() à displayData() afin de les dispatcher dans les différents composants Main().
-  displayData(data);
+  try {
+    const data = await getPhotographers();
+    displayData(data);
+  } catch (error) {
+    console.error("Erreur lors du chargement des photographes:", error);
+  }
 })();

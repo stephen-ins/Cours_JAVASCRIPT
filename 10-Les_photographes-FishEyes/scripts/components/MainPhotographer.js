@@ -1,15 +1,17 @@
 export const MainPhotographer = (data) => {
   const { photographer, media } = data;
-  
+
   // Création de la galerie
   let mediaGallery = "";
   media.forEach((item) => {
-    const mediaElement = item.image 
+    const mediaElement = item.image
       ? `<img src="assets/images/photographers/samplePhotos-Small/${photographer.name}/${item.image}" 
           alt="${item.title}" class="photographe__picture"/>`
-      : `<video src="assets/images/photographers/samplePhotos-Small/${photographer.name}/${item.video}" 
-          class="photographe__picture"></video>`;
-          
+      : `<video autoplay muted loop class="photographe__picture">
+          <source src="assets/images/photographers/samplePhotos-Small/${photographer.name}/${item.video}" 
+            type="video/mp4">
+        </video>`;
+
     mediaGallery += `
       <div class="card__picture">
         <a href="" class="link__lightbox">
@@ -31,7 +33,9 @@ export const MainPhotographer = (data) => {
       <section class="card__identity__photographe">
         <div class="personal__info">
           <h2 class="title__h2__x2">${photographer.name}</h2>
-          <p class="locality__paragraph__x2">${photographer.city}, ${photographer.country}</p>
+          <p class="locality__paragraph__x2">${photographer.city}, ${
+    photographer.country
+  }</p>
           <p class="speciality__paragraph__x2">
             ${photographer.tagline}
           </p>
@@ -41,7 +45,9 @@ export const MainPhotographer = (data) => {
         </section>
         <div class="personal__thumbnail">
           <img
-            src="assets/images/photographers/thumbnails/${photographer.portrait}"
+            src="assets/images/photographers/thumbnails/${
+              photographer.portrait
+            }"
             alt="${photographer.name}"
             class="thumbnail"
           />
@@ -66,7 +72,13 @@ export const MainPhotographer = (data) => {
 
     <div class="content__information__bottom">
       <div class="like__icon">
-        <span class="like__count">${media.reduce((acc, curr) => acc + curr.likes, 0)}</span>
+
+        <!-- Ce code calcule le nombre total de "likes" pour tous les éléments de média en utilisant la méthode reduce. Il additionne les "likes" de chaque élément et affiche le total dans un élément span avec la classe "like__count". -->
+        
+        <span class="like__count">${media.reduce(
+          (acc, curr) => acc + curr.likes,
+          0
+        )}</span>
         <i class="fas fa-heart"></i>
       </div>
       <div class="session__price">${photographer.price}€/jour</div>

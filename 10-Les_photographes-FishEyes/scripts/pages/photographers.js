@@ -1,6 +1,7 @@
 import { getPhotographerById } from "../utils/Api.js";
 import { HeaderPhotographer } from "../components/HeaderPhotographer.js";
 import { MainPhotographer } from "../components/MainPhotographer.js";
+import { initModal } from "../utils/ModalContact.js";
 
 const displayData = (data) => {
   const body = document.querySelector(".container");
@@ -8,6 +9,7 @@ const displayData = (data) => {
     ${HeaderPhotographer()}
     ${MainPhotographer(data)}
   `;
+  initModal();
 };
 
 // Fonction asynchrone anonyme qui s'exécute automatiquement

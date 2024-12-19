@@ -13,60 +13,47 @@ export const getData = async () => {
   }
 };
 
-export const getProducts = async () => {
+export const getPhotographers = async () => {
   const data = await getData();
-  // console.log(data.products);
-  return data.products;
+  return data.photographers;
 };
 
-export const getProductsById = async () => {
-  // Windows.location.search permet de récupérer les paramêtres de recherche dans l'URL (ex: ?id=243)
-  // console.log("getProductsById");
+export const getPhotographerById = async () => {
+  try {
+    // Récupérer l'ID depuis l'URL
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const photographerId = urlParams.get("id");
 
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  // Permet de récupérer uniquement la valeur de l'indice ?id= dans l'URL.
-  const id = urlParams.get("id");
-  // console.log(id);
-  // console.log(queryString);
-  // console.log(urlParams);
-
-  const products = await getProducts();
-  // console.log(products);
-  // filter : fonction qui permet de filtrer un résultat en fonction d'une condition
-  const data = products.filter((product) => {
-    // Si l'ID du produit est égal à l'id du produit dans l'URL (?id=243), alors on retourne le produit.
-    if (product.id == id) {
-      return product;
+    if (!photographerId) {
+      throw new Error("Aucun ID de photographe trouvé dans l'URL");
     }
-  });
-  // console.log(data);
 
-  // La fonction doit retourner quelque chose
-  return data[0];
-};
+    const photographers = await getPhotographers();
 
-export const setProductLocalStorage = (id, arrayProduct) => {
-  localStorage.setItem(id, arrayProduct);
-};
+    // Utiliser find au lieu de filter car on cherche un seul photographe
+    const photographer = photographers.find(
+      (p) => p.id === parseInt(photographerId)
+    );
 
-export const getProductsLocalStorage = () => {
-  // console.log(localStorage);
+    if (!photographer) {
+      throw new Error(`Aucun photographe trouvé avec l'ID: ${photographerId}`);
+    }
 
-  const items = { ...localStorage };
-  // console.log(items);
-  let itemsPanier = {};
+    // Récupérer les données complètes pour avoir accès aux médias
+    const allData = await getData();
 
-  //           124    L'ensemble des produits du panier
-  for (const key in items) {
-    // console.log(key);
-    //              items[124]
-    //              items[243]
-    //              items[789]
-    // console.log(items[key]);
-    // JSON.parse permet de convertir une chaîne en objet JavaScript que nous pouvons manipuler pour afficher les données.
-    itemsPanier[key] = JSON.parse(items[key]);
+    // Récupérer les médias du photographe
+    const media = allData.media.filter(
+      (m) => m.photographerId === parseInt(photographerId)
+    );
+
+    return {
+      photographer,
+      media,
+    };
+  } catch (error) {
+    console.error("Erreur dans getPhotographerById:", error);
+    throw error;
   }
-  // console.log(itemsPanier);
-  return itemsPanier;
 };

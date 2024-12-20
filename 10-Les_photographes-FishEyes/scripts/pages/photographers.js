@@ -9,7 +9,7 @@ const displayData = (data) => {
     ${HeaderPhotographer()}
     ${MainPhotographer(data)}
   `;
-  initModal();
+  initModal(data.photographer);
 };
 
 // Fonction asynchrone anonyme qui s'exécute automatiquement

@@ -28,7 +28,32 @@
     <title>FishEye | Nos photographes</title>
   </head>
   <body>
-    <div class="container"></div>
+    <div class="container">
+      <section class="lightbox">
+        <div class="lightbox__content">
+          <img
+            src="assets/images/photographers/samplePhotos-Medium/Mimi Keel/Animals_Rainbow.webp"
+            alt="image"
+            class="lightbox__image"
+          />
+          <span
+            class="lightbox__chevron lightbox__chevron--avant"
+            aria-label="Image précédente"
+          >
+            <i class="fas fa-chevron-left"></i>
+          </span>
+          <span
+            class="lightbox__chevron lightbox__chevron--apres"
+            aria-label="Image suivante"
+          >
+            <i class="fas fa-chevron-right"></i>
+          </span>
+          <span class="lightbox__close" aria-label="Fermer la lightbox">
+            <i class="fas fa-times"></i>
+          </span>
+        </div>
+      </section>
+    </div>
 
     <script src="scripts/pages/photographers.js" type="module"></script>
   </body>

@@ -25,6 +25,12 @@ body {
   max-width: 1440px;
   height: 100%;
   background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.container.blur {
+  filter: blur(5px);
+  pointer-events: none;
 }
 
 .header {
@@ -323,26 +329,32 @@ body {
 }
 
 .modal {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0);
   z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
+  backdrop-filter: blur(0px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
 }
 
-.modal.active {
-  display: block;
+.modal__active {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  opacity: 1;
+  pointer-events: all;
 }
 
 .name__contact__modale {
   font-size: 2rem;
-  color: #000;
+  color: #525252;
   height: auto;
   width: 100%;
   margin: 1rem 0;
@@ -360,8 +372,9 @@ body {
   padding: 1rem;
   position: relative;
   margin: 0.5rem;
-  transform: translateY(-2%);
-  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
 }
 
 .modal__header {
@@ -389,6 +402,11 @@ body {
   cursor: pointer;
   color: white;
   padding: 0.5rem;
+}
+
+.modal__close:hover {
+  transform: rotate(45deg);
+  transition: all 0.2s ease-in-out;
 }
 
 .form-group {
@@ -430,6 +448,79 @@ body {
 
 .submit-button:hover {
   background: #d3573c;
+}
+
+.modal__active .modal__content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox__content {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox__image {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.lightbox__chevron {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.lightbox__chevron--avant {
+  left: 1rem;
+}
+
+.lightbox__chevron--apres {
+  right: 1rem;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.lightbox__close:hover {
+  color: #901c1c;
+  transition: all 0.3s ease;
+  transform: rotate(180deg);
+}
+
+.lightbox__chevron:hover {
+  color: #901c1c;
+  transition: all 0.3s ease;
 }
 
 /* MEDIA QUERIES */
@@ -534,6 +625,11 @@ body {
     padding: 0.5rem;
   }
 
+  .title__h1 {
+    font-size: 1.5rem;
+    text-align: end;
+  }
+
   .card__identity__photographe {
     padding: 0.5rem;
     text-align: center;
@@ -571,7 +667,12 @@ body {
   }
 
   .triage__select {
+    width: 60%;
+  }
+
+  .option {
     width: 100%;
+    box-sizing: border-box;
   }
 
   .card__picture {
@@ -620,16 +721,25 @@ body {
   .container {
     padding: 0.5rem;
   }
-}
 
-/* Styles pour mobile */
-@media screen and (max-width: 768px) {
   .modal__content {
     width: 90%;
     padding: 1rem;
   }
 
   .modal__header h2 {
+    font-size: 1.5rem;
+  }
+
+  .lightbox__content {
+    width: 95%;
+  }
+
+  .lightbox__chevron {
+    font-size: 2rem;
+  }
+
+  .lightbox__close {
     font-size: 1.5rem;
   }
 }
@@ -719,5 +829,48 @@ body {
 
   .session__price {
     font-size: 0.9rem;
+  }
+
+  .logo {
+    width: 100px;
+    height: auto;
+  }
+
+  .title__h1 {
+    width: 100%;
+    height: 50px;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .title__h2 {
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    font-size: 1.2rem;
+    color: #d3573c;
+    word-spacing: 0.3rem;
+    letter-spacing: 0.2rem;
+  }
+
+  .header {
+    padding: 1rem;
+    margin: 1rem 0;
+    width: calc(100% - 2rem);
+    height: 120px;
+    display: flex;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .banner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
